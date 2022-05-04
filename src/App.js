@@ -1,25 +1,47 @@
-import logo from './logo.svg';
 import './App.css';
+import FeatherIcon from 'feather-icons-react';
+import {useState} from "react";
 
 function App() {
+
+  const [count,setcount] = useState(0);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="counter-box">
+         
+         <div className="counter-header">
+           <h2> Counter App</h2>
+         </div>
+
+         <div className="counter">
+           <p> {count} </p>
+         </div>
+
+         <div className="counter-buttons">
+
+              <button
+                onClick={() => setcount(count + 1)}
+              >
+                <FeatherIcon icon="plus" />
+              </button>
+
+              <button
+                onClick={() => setcount(count - 1)}
+
+              >
+                <FeatherIcon icon="minus" />
+              </button>
+
+              <button
+                onClick={() => setcount(0)}
+              >
+                <FeatherIcon icon="refresh-ccw" />
+              </button>
+
+         </div>
+
     </div>
-  );
+    );
 }
 
 export default App;
